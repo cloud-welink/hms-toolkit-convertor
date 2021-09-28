@@ -34,7 +34,7 @@ import java.util.List;
 @Slf4j
 public class EditEventHandler extends AbstractCallbackHandler<ChangedCode, List<ConversionItem>>
     implements GeneralEventHandler {
-    private String projectPath;
+    private final String projectPath;
 
     public EditEventHandler(String projectPath) {
         this.projectPath = projectPath;
