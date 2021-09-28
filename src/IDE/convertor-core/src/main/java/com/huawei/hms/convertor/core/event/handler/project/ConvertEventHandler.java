@@ -79,9 +79,7 @@ public class ConvertEventHandler extends AbstractCallbackHandler<String, List<Co
         if (!isGradle) {
             return false;
         }
-        boolean isAllConverted = conversionItemList.stream().filter(item -> item.getFile().endsWith(GRADLE_FILE_EXTENSION)).allMatch(item -> item.isConverted());
-        return isAllConverted;
-
+        return conversionItemList.stream().filter(item -> item.getFile().endsWith(GRADLE_FILE_EXTENSION)).allMatch(ConversionItem::isConverted);
     }
 
     private void syncGradle(String projectPath, ConversionItem conversionItem) {
