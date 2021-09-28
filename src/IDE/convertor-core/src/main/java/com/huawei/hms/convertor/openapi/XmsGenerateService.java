@@ -45,7 +45,7 @@ public final class XmsGenerateService {
      *
      * @return GeneratorResult
      */
-    public static Set supportKitInfo() {
+    public static Set<String> supportKitInfo() {
         return XmsService.supportKitInfo();
     }
 
