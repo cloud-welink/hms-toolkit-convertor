@@ -80,8 +80,7 @@ public class RevertEventHandler extends AbstractCallbackHandler<String, List<Con
         if (!isGradle) {
             return false;
         }
-        boolean isAllRestored = conversionItemList.stream().filter(item -> item.getFile().endsWith(GRADLE_FILE_EXTENSION)).noneMatch(item -> item.isConverted());
-        return isAllRestored;
+        return conversionItemList.stream().filter(item -> item.getFile().endsWith(GRADLE_FILE_EXTENSION)).noneMatch(ConversionItem::isConverted);
     }
 
     private void syncGradle(String projectPath, ConversionItem conversionItem) {
